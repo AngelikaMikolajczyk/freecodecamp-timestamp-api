@@ -34,7 +34,7 @@ app.get("/api/timestamp/:date", function (req, res) {
     unix = new Date(date).getTime();
   } else {
     utc = new Date(Number(date));
-    unix = date;
+    unix = Number(date);
   }
 
   res.json({"utc": utc, "unix": unix});
